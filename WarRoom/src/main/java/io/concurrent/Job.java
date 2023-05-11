@@ -1,5 +1,6 @@
 package io.concurrent;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
@@ -11,7 +12,7 @@ public class Job {
     private final ExecutorService exec = Executors.newFixedThreadPool(2);
 
     void run() throws Exception {
-        List<Callable<Integer>> tasks = List.of(
+        List<Callable<Integer>> tasks = Arrays.asList(
                 new SumTask(1, 2, 3),
                 new ProductTask(4, 5, 6));
 
